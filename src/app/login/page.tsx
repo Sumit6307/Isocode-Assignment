@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/Button";
 
 export default function LoginPage() {
   const router = useRouter();
-  const [email, setEmail] = useState("admin@company-a.com");
+  const [email, setEmail] = useState("admin@aavkarrealty.com");
   const [password, setPassword] = useState("password123");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -17,13 +17,13 @@ export default function LoginPage() {
     {
       role: "ADMIN / SALES HEAD",
       name: "Rajesh Mehta",
-      email: "admin@company-a.com",
+      email: "admin@aavkarrealty.com",
       desc: "Full access to Source Analytics, Fact Sheet Editor & Slot Capacity Manager",
     },
     {
       role: "SALES EXECUTIVE",
       name: "Priya Sharma",
-      email: "priya@company-a.com",
+      email: "priya@aavkarrealty.com",
       desc: "Lead Desk, Assigned Inquiries, Chat Transcripts & Site Visit Follow-ups",
     },
     {
@@ -63,7 +63,7 @@ export default function LoginPage() {
             <Building2 className="w-5 h-5 text-teal-200" />
           </div>
           <span className="text-xl font-extrabold text-stone-900 tracking-tight">
-            COMPANY A
+            AAVKAR REALTY
           </span>
         </Link>
         <h2 className="text-xl font-bold text-stone-900">
@@ -175,3 +175,4 @@ export default function LoginPage() {
     </div>
   );
 }
+

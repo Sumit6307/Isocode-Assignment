@@ -29,7 +29,7 @@ function ChatContent() {
               </div>
               <div>
                 <h1 className="text-sm font-bold text-stone-900">
-                  Company A • Real Estate Concierge
+                  Aavkar Realty • Concierge Assistant
                 </h1>
                 <p className="text-[10px] text-stone-500">
                   Gujarat RERA Registered Residential Projects
@@ -116,3 +116,4 @@ export default function ChatPage() {
     </Suspense>
   );
 }
+

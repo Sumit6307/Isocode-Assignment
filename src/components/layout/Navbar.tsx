@@ -17,10 +17,10 @@ export const Navbar: React.FC = () => {
             </div>
             <div>
               <span className="text-base font-bold text-stone-900 tracking-tight">
-                COMPANY A
+                AAVKAR REALTY
               </span>
               <span className="block text-[10px] text-teal-700 font-medium uppercase tracking-wider">
-                Residential Developer • Ahmedabad
+                Premier Residential Developer • Ahmedabad
               </span>
             </div>
           </Link>
@@ -56,3 +56,4 @@ export const Navbar: React.FC = () => {
     </nav>
   );
 };
+

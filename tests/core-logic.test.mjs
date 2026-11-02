@@ -128,3 +128,4 @@ test("6. Indian Real Estate Currency Formatting", () => {
   assert.equal(formatCurrency(6500000), "₹65.00 L");
   assert.equal(formatCurrency(12000000), "₹1.20 Cr");
 });
+

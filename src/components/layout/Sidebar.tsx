@@ -28,7 +28,7 @@ interface SidebarProps {
 export const Sidebar: React.FC<SidebarProps> = ({
   currentUser = {
     name: "Rajesh Mehta",
-    email: "admin@company-a.com",
+    email: "admin@aavkarrealty.com",
     role: "ADMIN",
   },
 }) => {
@@ -75,7 +75,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
           </div>
           <div>
             <h1 className="text-sm font-bold tracking-tight text-white">
-              COMPANY A
+              AAVKAR REALTY
             </h1>
             <p className="text-[10px] text-stone-400 font-medium uppercase tracking-wider">
               Sales & Lead Desk
@@ -185,3 +185,4 @@ export const Sidebar: React.FC<SidebarProps> = ({
     </aside>
   );
 };
+

@@ -1,6 +1,6 @@
 # 🚀 Deployment & Local Setup Guide
 
-**Client:** Company A, Ahmedabad  
+**Client:** Aavkar Realty, Ahmedabad (Formerly Company A in Brief)  
 **Product:** Real Estate AI Lead-Response & Site-Visit Booking Assistant  
 **Repository:** Public GitHub Repository (see TDD for URL)
 
@@ -60,8 +60,8 @@ For convenience during review, **One-Click Quick Login buttons** are available d
 
 | Role | Email | Password | Intended Test Flow |
 | :--- | :--- | :--- | :--- |
-| **Admin / Sales Head** | `admin@company-a.com` | `password123` | Analytics dashboard, Fact Sheet Editor, Slot Capacity Manager |
-| **Sales Executive** | `priya@company-a.com` | `password123` | Lead Desk, chat transcript review, executive handoff |
+| **Admin / Sales Head** | `admin@aavkarrealty.com` | `password123` | Analytics dashboard, Fact Sheet Editor, Slot Capacity Manager |
+| **Sales Executive** | `priya@aavkarrealty.com` | `password123` | Lead Desk, chat transcript review, executive handoff |
 | **Home Buyer** | `buyer@example.com` | `password123` | Interactive AI booking chat, real slot picker, RERA inquiries |
 
 ---
@@ -127,3 +127,4 @@ CMD ["npm", "start"]
    - Click any lead → view full chronological chat transcript.
    - Click *"Hand Off to Sales Executive"* → select Priya Sharma or Amit Desai.
    - Intelligent chat summary is generated and transferred to the executive's desk.
+

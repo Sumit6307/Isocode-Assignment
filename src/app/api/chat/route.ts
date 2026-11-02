@@ -186,7 +186,7 @@ export async function POST(request: NextRequest) {
           )
           .join("\n");
 
-        const prompt = `You are the official AI Lead-Response and Site-Visit Booking Assistant for "Company A", a premier residential real estate developer in Ahmedabad.
+        const prompt = `You are the official AI Lead-Response and Site-Visit Booking Assistant for "Aavkar Realty", a premier residential real estate developer in Ahmedabad.
 
 STRICT OPERATING RULES:
 1. ONLY state facts that appear in the official fact sheet below. If any detail is not in the fact sheet, you MUST state that our sales team will confirm it, and never guess.
@@ -383,3 +383,4 @@ function generateFactSheetResponse(
 
   return `Thank you for your inquiry! This specific detail is not recorded in our official sales fact sheet. To ensure you receive 100% accurate information per RERA guidelines, our senior sales executive will confirm this for you.\n\nIn the meantime, would you like to **book a site visit** to explore the property, or have a sales consultant call you directly?`;
 }
+

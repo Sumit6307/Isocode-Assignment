@@ -101,7 +101,7 @@ export default function DashboardPage() {
               Executive Analytics & Lead Performance
             </h1>
             <p className="text-xs text-stone-500 mt-0.5">
-              Live tracking for Company A (420 Apartments • Shela & Bopal)
+              Live tracking for Aavkar Realty (420 Apartments • Shela & Bopal)
             </p>
           </div>
 
@@ -315,3 +315,4 @@ export default function DashboardPage() {
     </div>
   );
 }
+

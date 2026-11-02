@@ -313,7 +313,7 @@ export default function HomePage() {
       <footer className="mt-auto bg-stone-900 text-stone-400 py-10 border-t border-stone-800 text-xs">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
-            <p className="font-bold text-stone-200">Company A • Ahmedabad, Gujarat</p>
+            <p className="font-bold text-stone-200">Aavkar Realty • Ahmedabad, Gujarat</p>
             <p className="text-[11px] mt-0.5">
               RERA Reg: PR/GJ/AHMEDABAD/AHMEDABAD/RAA10000 & RAA10001
             </p>

@@ -22,7 +22,7 @@ async function main() {
   const admin = await prisma.user.create({
     data: {
       name: "Rajesh Mehta",
-      email: "admin@company-a.com",
+      email: "admin@aavkarrealty.com",
       password: hashedPassword,
       role: "ADMIN",
       phone: "+919876543210",
@@ -32,7 +32,7 @@ async function main() {
   const salesExec1 = await prisma.user.create({
     data: {
       name: "Priya Sharma",
-      email: "priya@company-a.com",
+      email: "priya@aavkarrealty.com",
       password: hashedPassword,
       role: "SALES_EXEC",
       phone: "+919876543211",
@@ -42,7 +42,7 @@ async function main() {
   const salesExec2 = await prisma.user.create({
     data: {
       name: "Amit Desai",
-      email: "amit@company-a.com",
+      email: "amit@aavkarrealty.com",
       password: hashedPassword,
       role: "SALES_EXEC",
       phone: "+919876543212",
@@ -52,7 +52,7 @@ async function main() {
   const salesExec3 = await prisma.user.create({
     data: {
       name: "Neha Patel",
-      email: "neha@company-a.com",
+      email: "neha@aavkarrealty.com",
       password: hashedPassword,
       role: "SALES_EXEC",
       phone: "+919876543213",
@@ -343,7 +343,7 @@ async function main() {
     });
 
     const chatMessages = [
-      { sessionId: session.id, role: "assistant", content: "Hello! Welcome to Company A. I'm here to help you find your dream home. 🏠\n\nWe have two beautiful projects in Ahmedabad:\n\n1. **Shubh Residency** - Shela (2 & 3 BHK, ₹65L - ₹95L)\n2. **Aarambh Heights** - Bopal (2 & 3 BHK, ₹78L - ₹1.2Cr)\n\nWhich project interests you, or would you like to know more about both?" },
+      { sessionId: session.id, role: "assistant", content: "Hello! Welcome to Aavkar Realty. I'm here to help you find your dream home. 🏠\n\nWe have two beautiful projects in Ahmedabad:\n\n1. **Shubh Residency** - Shela (2 & 3 BHK, ₹65L - ₹95L)\n2. **Aarambh Heights** - Bopal (2 & 3 BHK, ₹78L - ₹1.2Cr)\n\nWhich project interests you, or would you like to know more about both?" },
       { sessionId: session.id, role: "user", content: "I'm looking for a 3 BHK in Shela area. What's the price?" },
       { sessionId: session.id, role: "assistant", content: "Great choice! **Shubh Residency** in Shela offers spacious 3 BHK apartments ranging from **1,550 to 1,750 sq ft**.\n\nThe 3 BHK apartments are priced from **₹82 lakh to ₹95 lakh** (ex-showroom). For the exact pricing of available units, our sales team can share the detailed breakup.\n\n📋 RERA: PR/GJ/AHMEDABAD/AHMEDABAD/RAA10000/A1/260126\n\nWould you like to:\n- Know about the amenities and specifications?\n- **Book a site visit** to see the project?\n- Talk to a sales executive for detailed pricing?" },
       { sessionId: session.id, role: "user", content: "I'd like to book a site visit" },
@@ -362,8 +362,8 @@ async function main() {
 
   console.log("\n📋 Demo Login Credentials:");
   console.log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
-  console.log("Admin:       admin@company-a.com / password123");
-  console.log("Sales Exec:  priya@company-a.com / password123");
+  console.log("Admin:       admin@aavkarrealty.com / password123");
+  console.log("Sales Exec:  priya@aavkarrealty.com / password123");
   console.log("Buyer:       buyer@example.com / password123");
 }
 

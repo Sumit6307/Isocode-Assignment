@@ -1,7 +1,7 @@
 # Technical Design Document (TDD)
 ## Real Estate Developer's AI Lead-Response and Site-Visit Booking Assistant
 
-**Client:** Company A, Ahmedabad (Residential Developer — 2 live projects, 420 apartments, ₹65L - ₹1.2Cr)  
+**Client:** Aavkar Realty, Ahmedabad (Referenced as Company A in problem brief) — Residential Developer with 2 live projects, 420 apartments, ₹65L - ₹1.2Cr  
 **Project GitHub Repository:** [https://github.com/your-username/realestate-ai-lead-assistant](https://github.com/your-username/realestate-ai-lead-assistant)  
 *(Note: Replace with your public repository URL before submission)*  
 **Live Application URL:** [https://realestate-ai-lead-assistant.vercel.app](https://realestate-ai-lead-assistant.vercel.app) *(or http://localhost:3000)*  
@@ -253,3 +253,4 @@ The UI was crafted specifically for high-value real estate buyers and busy sales
 2. **Historical Response Baseline:** Median first response was assumed at 14 hours with 35% cold lead rate prior to AI deployment.
 3. **Slot Concurrency:** Default showroom capacity is configured at 3 simultaneous buyer parties per 90-minute window per project site.
 4. **RERA Numbers:** Registered under Gujarat RERA: `PR/GJ/AHMEDABAD/AHMEDABAD/RAA10000/A1/260126` (Shubh Residency) and `PR/GJ/AHMEDABAD/AHMEDABAD/RAA10001/B2/150226` (Aarambh Heights).
+
