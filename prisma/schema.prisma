@@ -1,0 +1,155 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String
+  email         String    @unique
+  password      String
+  role          String    @default("BUYER") // BUYER, SALES_EXEC, ADMIN
+  phone         String?
+  avatar        String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  assignedLeads Lead[]    @relation("AssignedTo")
+  chatSessions  ChatSession[]
+}
+
+model Project {
+  id            String    @id @default(cuid())
+  name          String
+  slug          String    @unique
+  reraNumber    String
+  location      String
+  address       String?
+  city          String    @default("Ahmedabad")
+  lat           Float?
+  lng           Float?
+  description   String
+  priceMin      Float     // in lakhs
+  priceMax      Float     // in lakhs
+  configs       String    // "2 BHK, 3 BHK"
+  amenities     String    // comma separated
+  totalUnits    Int
+  availableUnits Int
+  status        String    @default("ACTIVE") // ACTIVE, SOLD_OUT, UPCOMING
+  imageUrl      String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  factSheet     FactSheetEntry[]
+  leads         Lead[]
+  visitSlots    VisitSlot[]
+}
+
+model FactSheetEntry {
+  id            String    @id @default(cuid())
+  projectId     String
+  project       Project   @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  question      String
+  answer        String
+  category      String    @default("General") // General, Pricing, Amenities, Location, Legal, Specifications
+  sortOrder     Int       @default(0)
+  isActive      Boolean   @default(true)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+
+model Lead {
+  id            String    @id @default(cuid())
+  leadId        String    @unique // LD-XXXXX format
+  name          String
+  email         String?
+  phone         String
+  source        String    // property_portal, social_media, website, hoarding, walk_in
+  projectId     String?
+  project       Project?  @relation(fields: [projectId], references: [id])
+  wants         String?   // "2 BHK", "3 BHK"
+  budget        String?
+  status        String    @default("NEW") // NEW, CONTACTED, QUALIFIED, SITE_VISIT_BOOKED, VISITED, HANDED_OFF, CLOSED, DUPLICATE
+  assignedToId  String?
+  assignedTo    User?     @relation("AssignedTo", fields: [assignedToId], references: [id])
+  isDuplicate   Boolean   @default(false)
+  duplicateOfId String?
+  responseTime  Int?      // in seconds
+  firstResponseAt DateTime?
+  consentGiven  Boolean   @default(false)
+  language      String    @default("en") // en, hi, gu
+  notes         String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  chatSessions  ChatSession[]
+  visitBookings VisitBooking[]
+}
+
+model ChatSession {
+  id            String    @id @default(cuid())
+  leadId        String
+  lead          Lead      @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  userId        String?
+  user          User?     @relation(fields: [userId], references: [id])
+  status        String    @default("ACTIVE") // ACTIVE, HANDED_OFF, CLOSED
+  summary       String?
+  language      String    @default("en")
+  isFlagged     Boolean   @default(false)
+  flagReason    String?
+  handoffExecId String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  messages      ChatMessage[]
+}
+
+model ChatMessage {
+  id            String    @id @default(cuid())
+  sessionId     String
+  session       ChatSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  role          String    // user, assistant, system, tool
+  content       String
+  toolCall      String?   // JSON string of tool call if any
+  confidence    Float?
+  createdAt     DateTime  @default(now())
+}
+
+model VisitSlot {
+  id            String    @id @default(cuid())
+  projectId     String
+  project       Project   @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  date          String    // YYYY-MM-DD
+  startTime     String    // HH:mm
+  endTime       String    // HH:mm
+  maxCapacity   Int       @default(3)
+  bookedCount   Int       @default(0)
+  isActive      Boolean   @default(true)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  bookings      VisitBooking[]
+
+  @@unique([projectId, date, startTime])
+}
+
+model VisitBooking {
+  id            String    @id @default(cuid())
+  slotId        String
+  slot          VisitSlot @relation(fields: [slotId], references: [id], onDelete: Cascade)
+  leadId        String
+  lead          Lead      @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  status        String    @default("BOOKED") // BOOKED, REMINDED_24H, REMINDED_2H, VISITED, NO_SHOW, CANCELLED
+  reminderSent  Boolean   @default(false)
+  visitedAt     DateTime?
+  notes         String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  @@unique([slotId, leadId])
+}
+
