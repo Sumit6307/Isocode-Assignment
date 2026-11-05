@@ -79,31 +79,33 @@ For convenience during review, **One-Click Quick Login buttons** are available d
 
 ---
 
-## 4. Production Deployment Guide (Vercel / Railway / Cloud)
+## 4. Production Deployment Guide (Vercel + Render PostgreSQL)
 
-### Deploying to Vercel (Recommended)
-1. Push this repository to GitHub.
-2. Import the repository in [Vercel](https://vercel.com).
-3. Set the Build Command: `npx prisma generate && next build`
-4. In **Environment Variables**, configure:
-   - `DATABASE_URL` (PostgreSQL connection string, e.g. Neon, Supabase, or Railway Postgres)
-   - `NEXTAUTH_SECRET` (generate with `openssl rand -base64 32`)
-   - `NEXTAUTH_URL` (your deployed Vercel domain)
-   - `GEMINI_API_KEY` (your Google Gemini API key)
-5. Deploy and run post-deploy migration: `npx prisma db push && npm run seed`
+### Step A: Set up Free PostgreSQL on Render
+1. Go to [Render Dashboard](https://dashboard.render.com) → Click **New +** → **PostgreSQL**.
+2. Name: `aavkar-realestate-db`.
+3. Choose the Free tier and click **Create Database**.
+4. Copy the **External Database URL** (e.g. `postgresql://user:password@host.render.com/dbname?sslmode=require`).
 
-### Docker Deployment
-```dockerfile
-FROM node:20-alpine AS runner
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci --only=production
-COPY . .
-RUN npx prisma generate
-RUN npm run build
-EXPOSE 3000
-CMD ["npm", "start"]
+### Step B: Push Schema & Seed to Render Database
+From your local terminal, run with your Render URL:
+```bash
+# Push schema tables
+npx prisma db push
+
+# Seed projects, slots, and sample leads
+npm run seed
 ```
+
+### Step C: Deploy Full-Stack to Vercel
+1. Go to [Vercel](https://vercel.com) → Click **Add New** → **Project**.
+2. Import repository: `https://github.com/Sumit6307/Isocode-Assignment`.
+3. Under **Environment Variables**, add these 4 variables:
+   - `DATABASE_URL`: *(Your Render PostgreSQL External URL)*
+   - `NEXTAUTH_SECRET`: `2+C3Z0M42UTL7QAyC/MXqd8DH8eY2cVd8C9YZExBBOM=`
+   - `NEXTAUTH_URL`: `https://your-project.vercel.app` *(or leave blank for Vercel auto-detection)*
+   - `GEMINI_API_KEY`: *(Your Google Gemini API Key)*
+4. Click **Deploy**. Vercel will build and deploy both frontend pages and backend APIs in under 2 minutes!
 
 ---
 
