@@ -2,6 +2,7 @@
 
 > **Client:** Aavkar Realty, Ahmedabad (Referenced as Company A in problem brief)  
 > **Repository:** [https://github.com/Sumit6307/Isocode-Assignment](https://github.com/Sumit6307/Isocode-Assignment)  
+> **Live Production URL:** [https://aavkar-realty.vercel.app](https://aavkar-realty.vercel.app)  
 > **Tech Stack:** Next.js 16 (App Router), TypeScript, Prisma ORM, SQLite/PostgreSQL, Google Gemini API, Tailwind CSS  
 
 ---

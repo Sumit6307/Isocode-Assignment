@@ -2,7 +2,8 @@
 
 **Client:** Aavkar Realty, Ahmedabad (Formerly Company A in Brief)  
 **Product:** Real Estate AI Lead-Response & Site-Visit Booking Assistant  
-**Repository:** [https://github.com/Sumit6307/Isocode-Assignment](https://github.com/Sumit6307/Isocode-Assignment)
+**Repository:** [https://github.com/Sumit6307/Isocode-Assignment](https://github.com/Sumit6307/Isocode-Assignment)  
+**Live Application URL:** [https://aavkar-realty.vercel.app](https://aavkar-realty.vercel.app)
 
 ---
 
@@ -103,7 +104,7 @@ npm run seed
 3. Under **Environment Variables**, add these 4 variables:
    - `DATABASE_URL`: *(Your Render PostgreSQL External URL)*
    - `NEXTAUTH_SECRET`: `2+C3Z0M42UTL7QAyC/MXqd8DH8eY2cVd8C9YZExBBOM=`
-   - `NEXTAUTH_URL`: `https://your-project.vercel.app` *(or leave blank for Vercel auto-detection)*
+   - `NEXTAUTH_URL`: `https://aavkar-realty.vercel.app`
    - `GEMINI_API_KEY`: *(Your Google Gemini API Key)*
 4. Click **Deploy**. Vercel will build and deploy both frontend pages and backend APIs in under 2 minutes!
 
