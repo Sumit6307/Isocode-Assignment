@@ -2,7 +2,7 @@
 
 **Client:** Aavkar Realty, Ahmedabad (Formerly Company A in Brief)  
 **Product:** Real Estate AI Lead-Response & Site-Visit Booking Assistant  
-**Repository:** Public GitHub Repository (see TDD for URL)
+**Repository:** [https://github.com/Sumit6307/Isocode-Assignment](https://github.com/Sumit6307/Isocode-Assignment)
 
 ---
 
@@ -17,7 +17,7 @@
 
 1. **Clone the repository and enter directory:**
    ```bash
-   git clone <YOUR_REPO_URL>
+   git clone https://github.com/Sumit6307/Isocode-Assignment.git
    cd Isocode-Assignment
    ```
 

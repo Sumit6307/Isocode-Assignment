@@ -2,9 +2,8 @@
 ## Real Estate Developer's AI Lead-Response and Site-Visit Booking Assistant
 
 **Client:** Aavkar Realty, Ahmedabad (Referenced as Company A in problem brief) — Residential Developer with 2 live projects, 420 apartments, ₹65L - ₹1.2Cr  
-**Project GitHub Repository:** [https://github.com/your-username/realestate-ai-lead-assistant](https://github.com/your-username/realestate-ai-lead-assistant)  
-*(Note: Replace with your public repository URL before submission)*  
-**Live Application URL:** [https://realestate-ai-lead-assistant.vercel.app](https://realestate-ai-lead-assistant.vercel.app) *(or http://localhost:3000)*  
+**Project GitHub Repository:** [https://github.com/Sumit6307/Isocode-Assignment](https://github.com/Sumit6307/Isocode-Assignment)  
+**Live Application URL:** [https://github.com/Sumit6307/Isocode-Assignment](https://github.com/Sumit6307/Isocode-Assignment) *(Local: http://localhost:3000)*  
 **Author:** Software Engineering Candidate  
 **Submission Date:** November 2026  
 
